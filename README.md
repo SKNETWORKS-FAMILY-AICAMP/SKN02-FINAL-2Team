@@ -1,4 +1,4 @@
-# SKN02-FINAL-12eam
+# SKN02-FINAL-2Team
 SKN2기 최종 단위프로젝트
 
 
