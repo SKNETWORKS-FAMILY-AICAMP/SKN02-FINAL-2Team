@@ -57,7 +57,7 @@ SKN2기 최종 단위프로젝트
 
 <div align=left><h3>🕹️ etc </div>
 </br>
-📝 WBS
+📝 <strong>WBS</strong>
 (https://docs.google.com/spreadsheets/d/1jcKlFxyC9QGutLGy6v7sRdCaukjxnwxW-72Tx2Wmcz8/edit?usp=sharing)
 </br></br>
 
