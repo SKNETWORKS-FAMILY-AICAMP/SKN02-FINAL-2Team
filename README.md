@@ -61,7 +61,7 @@ SKN2기 최종 단위프로젝트
 (https://docs.google.com/spreadsheets/d/1jcKlFxyC9QGutLGy6v7sRdCaukjxnwxW-72Tx2Wmcz8/edit?usp=sharing)
 </br></br>
 
-</br></br>
+</br>
 ✅ 요구사항 명세서</br>
 1. 프로젝트에 적합한 LLM을 선택하고, 해당 모델을 AI 인플루언서의 언어 스타일에 맞게 설정합니다.
 
