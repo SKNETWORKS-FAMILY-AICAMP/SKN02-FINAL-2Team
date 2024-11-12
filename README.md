@@ -81,12 +81,12 @@ SKN2기 최종 단위프로젝트
 3. Search 버튼 클릭해서 RAG 기반으로 Content 내용 생성하기
 4. Content에서 AI 인플루언서가 작성한 내용 확인하기
 5. Debug Output에서 Retrieved 문서 확인하기
-6. Submit 버튼 클릭하기
+6. Submit 버튼 클릭하기<br/><br/>
 +) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
 
 **[ 최신 News로 보는 경제 트렌드 ]**
 1. 크롤링한 최신 뉴스 데이터 불러오기
-2. LangChain으로 엮은 LLM 기반으로 최신 뉴스 데이터 요약하기
+2. LangChain으로 엮은 LLM 기반으로 최신 뉴스 데이터 요약하기<br/><br/>
 +) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
 
 <br/><br/>
