@@ -36,22 +36,30 @@ SKN2기 최종 단위프로젝트
 <div aling=left>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white">
+  <img src="https://img.shields.io/badge/postgresql-4169E1?style=for-the-badge&logo=Postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/gunicorn-499848?style=for-the-badge&logo=Gunicorn&logoColor=white">
+  <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=Nginx&logoColor=white">
+  
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white">
-  <img src="https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=Sqlite&logoColor=white">
-  <img src="https://img.shields.io/badge/virtualbox-183A61?style=for-the-badge&logo=Virtualbox&logoColor=white">
 </div>
-
-<div align=left><h3>🕹️ AI Core</div>
+  
+<div align=left><h3>🕹️ AI</div>
 <div align=left>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
   <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=OpenAI&logoColor=white">
+  <img src="https://img.shields.io/badge/langchain-1C3C3C?style=for-the-badge&logo=LangChain&logoColor=white">
+  <img src="https://img.shields.io/badge/Faiss-0467DF?style=for-the-badge&logo=Meta&logoColor=white">
+  <img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&logo=Pytorch&logoColor=white">
+  
 </div>
 
-<div align=left><h3>🕹️ Dev Tool </div>
+<div align=left><h3>🕹️ Infra </div>
 <div align="left">
-  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&lo콘텐츠를 정기적으로 업데이트하고, 운영에 필요한 유지보수 계획을 수립합니다.<br/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white">
+  
 <br/><br/>
+
 
 💻 <strong>DB 테이블 - ERD 및 DDL</strong>
 
@@ -62,7 +70,7 @@ SKN2기 최종 단위프로젝트
 📚 <strong>수행결과</strong>
 
 
-📚 <strong>한줄 회고</strong></br></br>
+📚 <strong>한줄 회고</strong>
 - 송문영 :
 - 김서연 : 경제 전문가로 거듭나 안락함을 누린다!
 - 전유빈 : 
