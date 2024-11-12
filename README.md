@@ -5,8 +5,8 @@ SKN2기 최종 단위프로젝트
 
 #  팀 소개
 👩‍🏫 <strong>팀 구성</strong> </br></br>
-[팀장] 송문영 <br/>
-[팀원] 김서연 전유빈 정영재 정인교
+**[팀장]** 송문영 <br/>
+**[팀원]** 김서연, 전유빈, 정영재, 정인교
 <br/><br/>
 
 
@@ -62,6 +62,7 @@ SKN2기 최종 단위프로젝트
 
 
 💻 <strong>DB 테이블 - ERD 및 DDL</strong>
+![my_project_visualized](https://github.com/user-attachments/assets/163b9587-b109-4c53-a257-7014fa0213a1)
 
 
 📚 <strong>주요 프로시저</strong>
