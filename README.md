@@ -66,13 +66,34 @@ SKN2기 최종 단위프로젝트
 
 
 📚 <strong>주요 프로시저</strong>
+**[ Post 작성 ]**
+1. 전처리 파일 불러오기
+2. Title로 사용할 글 소재 불러오기
+3. Search 버튼 클릭해서 RAG 기반으로 Content 내용 생성하기
+4. Content에서 AI 인플루언서가 작성한 내용 확인하기
+5. Debug Output에서 Retrieved 문서 확인하기
+6. Generate Image 버튼 클릭해서 Content 내용 기반으로 이미지 예시 생성하기
+7. Submit 버튼 클릭하기
 
+**[ 오늘의 단어 ]**
+1. 전처리 파일 불러오기
+2. Title로 사용할 단어 소재 불러오기
+3. Search 버튼 클릭해서 RAG 기반으로 Content 내용 생성하기
+4. Content에서 AI 인플루언서가 작성한 내용 확인하기
+5. Debug Output에서 Retrieved 문서 확인하기
+6. Submit 버튼 클릭하기
++) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
+
+**[ News ]**
+1. 크롤링한 최신 뉴스 데이터 불러오기
+2. LangChain으로 엮은 LLM 기반으로 최신 뉴스 데이터 요약하기
++) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
 
 📚 <strong>수행결과</strong>
 
 
 📚 <strong>한줄 회고</strong>
-- 송문영 :
+- 송문영 : 
 - 김서연 : 경제 전문가로 거듭나 안락함을 누린다!
 - 전유빈 : 
 - 정영재 : 
