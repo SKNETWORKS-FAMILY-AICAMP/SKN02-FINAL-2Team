@@ -65,7 +65,7 @@ SKN2기 최종 단위프로젝트
 ![my_project_visualized](https://github.com/user-attachments/assets/163b9587-b109-4c53-a257-7014fa0213a1)
 
 
-📚 <strong>주요 프로시저</strong>
+📚 <strong>주요 프로시저</strong><br/><br/>
 **[ Post 작성 ]**
 1. 전처리 파일 불러오기
 2. Title로 사용할 글 소재 불러오기
@@ -84,10 +84,12 @@ SKN2기 최종 단위프로젝트
 6. Submit 버튼 클릭하기
 +) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
 
-**[ News ]**
+**[ 최신 News로 보는 경제 트렌드 ]**
 1. 크롤링한 최신 뉴스 데이터 불러오기
 2. LangChain으로 엮은 LLM 기반으로 최신 뉴스 데이터 요약하기
 +) 상기의 과정은 정해진 시간에 AI 에이전트가 자동으로 수행
+
+<br/><br/>
 
 📚 <strong>수행결과</strong>
 
