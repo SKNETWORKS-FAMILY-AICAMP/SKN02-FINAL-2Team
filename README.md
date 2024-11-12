@@ -50,27 +50,7 @@ SKN2기 최종 단위프로젝트
 <div align=left><h3>🕹️ Dev Tool </div>
 <div align="left">
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
-  <img src="https://img.shields.io/badge/Visual Studio Code-008CFF?style=for-the-badge&logo=Visual Studio Code&logoColor=white">
-  <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">
-  <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
-</div>
-
-<div align=left><h3>🕹️ etc </div>
-</br>
-📝 <strong>WBS</strong>
-(https://docs.google.com/spreadsheets/d/1jcKlFxyC9QGutLGy6v7sRdCaukjxnwxW-72Tx2Wmcz8/edit?usp=sharing)
-</br></br>
-
-</br>
-✅ <strong>요구사항 명세서</strong></br></br>
-1. 프로젝트에 적합한 LLM을 선택하고, 해당 모델을 AI 인플루언서의 언어 스타일에 맞게 설정합니다.<br/>
-2. AI 인플루언서가 다룰 주요 컨텐츠 주제 및 표현 방식을 정의하고, 관련 데이터를 학습하도록 준비합니다.<br/>
-3. 사용자와 상호작용할 수 있도록 Q&A 시스템을 구현하며, 사용자가 질문하면 AI 인플루언서가 자연스럽게 답변합니다.<br/>
-4. AI 인플루언서의 이름, 성격, 외모, 배경 등을 구체화하여 캐릭터성을 높입니다.<br/>
-5. 콘텐츠의 질과 정확성을 높이기 위해 LLM의 파인튜닝(fine-tuning)과 데이터 필터링을 실시하여 모델 성능을 최적화합니다.<br/>
-6. AI 인플루언서를 배치할 인터페이스를 설계하고, 사용자 친화적인 UI를 구현하여 인플루언서와 쉽게 상호작용할 수 있도록 합니다.<br/>
-7. 사용자 피드백과 최신 트렌드를 반영할 수 있도록 모델과 컨텐츠를 정기적으로 업데이트하고, 운영에 필요한 유지보수 계획을 수립합니다.<br/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&lo콘텐츠를 정기적으로 업데이트하고, 운영에 필요한 유지보수 계획을 수립합니다.<br/>
 <br/><br/>
 
 💻 <strong>DB 테이블 - ERD 및 DDL</strong>
