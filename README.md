@@ -95,7 +95,7 @@ SKN2기 최종 단위프로젝트
 2. LangChain으로 엮은 LLM 기반으로 최신 뉴스 데이터 요약하기
 * 상기의 과정은 정해진 시간에 AI Agent가 자동으로 수행
 
-<br/><br/>
+<br/>
 
 📚 <strong>수행결과</strong>
 
