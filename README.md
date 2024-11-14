@@ -58,11 +58,11 @@ SKN2기 최종 단위프로젝트
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"><br/><br/>
 
-<br/>
+<br/><br/>
 📝 <strong>WBS</strong> (https://docs.google.com/spreadsheets/d/1jcKlFxyC9QGutLGy6v7sRdCaukjxnwxW-72Tx2Wmcz8/edit?usp=sharing)
 
-
 <br/>
+
 💻 <strong>DB 테이블 - ERD 및 DDL</strong>
 ![my_project_visualized](https://github.com/user-attachments/assets/163b9587-b109-4c53-a257-7014fa0213a1)
 
