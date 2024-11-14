@@ -1,0 +1,118 @@
+node_lines:
+  - node_line_name: retrieve_node_line
+    nodes:
+      - node_type: retrieval
+        strategy:
+          metrics: [ retrieval_ndcg, retrieval_mrr, retrieval_map, retrieval_recall] 
+        top_k: [5, 10, 30]
+        modules:
+          - module_type: bm25
+            bm25_tokenizer: [ko_kiwi, ko_okt, ko_kkma]
+          - module_type: vectordb
+            embedding_model:
+              - openai_embed_3_large
+              - ko-sroberta-multitask # jhgan/ko-sroberta-multitask
+              - KoSimCSE-roberta # BM-K/KoSimCSE-roberta
+              - paraphrase-multilingual-mpnet-base-v2 # sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+              - paraphrase-multilingual-MiniLM-L12-v2 # sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+              - multilingual-e5-large-instruct # intfloat/multilingual-e5-large-instruct
+              - KU-HIAI-ONTHEIT-large-v2 # KU-HIAI-ONTHEIT/ontheit-large-v2 (private)
+              - KU-HIAI-ONTHEIT-large-v2.1 # KU-HIAI-ONTHEIT/ontheit-large-v1_1 (private)
+              - kf-deberta-multitask # upskyy/kf-deberta-multitask
+              - gte-multilingual-base # Alibaba-NLP/gte-multilingual-base
+              - bge-m3 # BAAI/bge-m3
+              - KoE5 # nlpai-lab/KoE5
+          - module_type: hybrid_rrf
+          - module_type: hybrid_cc 
+            normalize_method: [ mm, tmm, z, dbsf ]
+            weight_range: (0.0, 1.0)
+            test_weight_size: 101
+      - node_type: passage_reranker
+        strategy:
+          metrics: [ retrieval_ndcg, retrieval_mrr, retrieval_map, retrieval_recall]
+        top_k: 5
+        modules:
+          - module_type: koreranker
+      # - node_type: passage_filter
+      #   strategy:
+      #     metrics: [ retrieval_ndcg, retrieval_mrr, retrieval_map, retrieval_recall, retrieval_precision, retrieval_f1 ]
+      #     speed_threshold: 5
+      #   modules:
+      #     - module_type: pass_passage_filter
+      #     - module_type: similarity_threshold_cutoff
+      #       threshold: 0.85
+      #     - module_type: similarity_percentile_cutoff
+      #       percentile: 0.6
+      #     - module_type: threshold_cutoff
+      #       threshold: 0.85
+      #     - module_type: percentile_cutoff
+      #       percentile: 0.6
+  - node_line_name: post_retrieve_node_line
+    nodes:
+      - node_type: prompt_maker
+        strategy:
+          metrics:
+            - metric_name: bleu
+            - metric_name: meteor
+            - metric_name: rouge
+            - metric_name: sem_score
+              embedding_model: openai
+            - metric_name: g_eval
+          generator_modules:
+            - module_type: openai_llm
+              llm: openai
+              model: gpt-4o-mini
+        modules:
+          - module_type: fstring
+            prompt:
+            - | 
+              당신은 경제 금융 전문가 '정수빈'입니다.
+              블로그 시리즈의 글을 작성한다고 생각해주세요.
+              이 블로그는 경제 지식이 없거나 경제 개념을 쉽게 배우고 싶은 사람들을 대상으로 합니다.
+              당신의 역할은 경제 용어에 대해 친절하고 쉽게 이해할 수 있는 설명을 제공하는 블로그 글을 작성하는 것입니다.
+
+              블로그 글 초반부에서는 인사말을 반드시 작성해야 합니다. 
+              '안녕하세요, 독자님들~ 수빈이입니다! 오늘도 저와 함께 쉽게 경제 공부를 해볼까요?' 등의 말로 시작해야 합니다.
+              
+              그 다음으로 개념을 상세하게 설명해 주세요. 
+              그리고 쉬운 예시를 3개 만들어서 동화처럼 설명해 주세요.
+              실생활에서 접할 수 있는 다양한 상황을 포함하도록 합니다.
+              
+              다음 단계로 이 용어를 이해하는 것이 왜 중요한지 요약해 주세요.
+
+              글 마무리 문구도 작성해야 합니다.
+              '오늘의 경제 공부는 어떠셨나요? 제 설명이 여러분께 도움이 되셨으면 좋겠어요. 오늘도 방문해주셔서 감사합니다 ^_^' 등의 말로 마무리해야 합니다.
+              
+              경제 지식이 전혀 없는 사람도 쉽게 이해하고 흥미롭게 읽을 수 있도록 친근하고 쉽게 작성해 주세요.
+              
+              # 주의사항:
+              1. 문서의 내용을 기반으로만 글을 작성하세요. 내용을 지어내거나 사실과 다르게 작성하지 마세요.
+              2. 문서에는 관련 메타데이터가 포함되어 있습니다. 메타데이터와 본문 내용을 모두 고려하여 정확한 답변을 제공하세요.
+              3. 만약 설명할 수 없는 부분이 있다면, '모르겠습니다'라고 답하세요.
+              4. 모든 제목은 #나 ## 같은 Markdown 표시 없이 굵은 글씨(**)로 나타나야 합니다. 예를 들어'## 경기가 무엇인가요?'는 '**경기가 무엇인가요?**'로 표시합니다.
+              5. 본문과 인사말에서는 일반 텍스트 형식을 사용하고, 필요할 경우 단어에만 굵은 글씨를 사용해주세요.
+              6. 글은 최대한 길게 작성해 주세요.
+              7. 글 초반부 인사와 마무리 인사는 길고 다채롭게 표현하면 좋습니다.
+              8. 글 초반부 인사 : 약 500자, 마무리 인사 : 약 500자 길이로 작성해 주세요.
+
+              이제 주제에 맞게 블로그 글을 작성해 주세요.
+              질문: {query}
+              단락: {retrieved_contents}
+              답변:
+      - node_type: generator
+        strategy:
+          metrics: 
+            - metric_name: bleu
+            - metric_name: meteor
+            - metric_name: rouge
+            - metric_name: sem_score
+              embedding_model: openai
+            - metric_name: g_eval
+              metrics: [consistency, fluency, relevance, coherence]
+            - metric_name: bert_score
+              lang: ko
+        modules:
+          - module_type: openai_llm
+            llm: gpt-4o-mini
+            temperature: [0.3, 0.5, 0.8]
+            batch: 2

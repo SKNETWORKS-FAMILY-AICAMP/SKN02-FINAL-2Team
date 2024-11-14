@@ -1,0 +1,2 @@
+filename,module_name,module_params,execution_time,passage_reranker_retrieval_ndcg,passage_reranker_retrieval_mrr,passage_reranker_retrieval_map,passage_reranker_retrieval_recall,is_best
+0.parquet,KoReranker,{'top_k': 3},8.320349197387696,0.98,0.98,0.98,0.98,True

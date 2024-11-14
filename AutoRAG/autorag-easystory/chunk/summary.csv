@@ -1,0 +1,9 @@
+filename,module_name,module_params,execution_time
+0.parquet,langchain_chunk,"{'chunk_method': 'recursivecharacter', 'separators': '\n', 'add_file_name': 'ko'}",3.045228507014231e-05
+1.parquet,langchain_chunk,"{'chunk_method': 'recursivecharacter', 'separators': ' ', 'add_file_name': 'ko'}",0.00010428685864966935
+2.parquet,llama_index_chunk,"{'chunk_method': 'Token', 'chunk_size': 1024, 'chunk_overlap': 128, 'add_file_name': 'ko'}",0.0016312450788822412
+3.parquet,llama_index_chunk,"{'chunk_method': 'Token', 'chunk_size': 512, 'chunk_overlap': 128, 'add_file_name': 'ko'}",0.0015844072049089487
+4.parquet,llama_index_chunk,"{'chunk_method': 'Sentence', 'chunk_size': 1024, 'chunk_overlap': 128, 'add_file_name': 'ko'}",0.0002964106832797102
+5.parquet,llama_index_chunk,"{'chunk_method': 'Sentence', 'chunk_size': 512, 'chunk_overlap': 128, 'add_file_name': 'ko'}",0.0006078338227331391
+6.parquet,llama_index_chunk,"{'chunk_method': 'SentenceWindow', 'window_size': 5, 'add_file_name': 'ko'}",0.0005456817595295886
+7.parquet,llama_index_chunk,"{'chunk_method': 'Semantic_llama_index', 'embed_model': 'openai', 'buffer_size': 1, 'breakpoint_percentile_threshold': 95}",0.9476185349507945

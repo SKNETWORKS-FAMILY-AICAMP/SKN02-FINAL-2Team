@@ -1,0 +1,71 @@
+node_lines:
+  - node_line_name: retrieve_node_line
+    nodes:
+      - node_type: retrieval
+        strategy:
+          metrics: [ retrieval_ndcg, retrieval_mrr, retrieval_map, retrieval_recall] 
+        top_k: 5
+        modules:
+          - module_type: bm25
+            bm25_tokenizer: [ko_kiwi, ko_okt, ko_kkma]
+          - module_type: vectordb
+            embedding_model: openai
+          - module_type: hybrid_rrf 
+          - module_type: hybrid_cc 
+            normalize_method: [ mm, tmm, z, dbsf ]
+            weight_range: (0.0, 1.0)
+            test_weight_size: 101
+  - node_line_name: post_retrieve_node_line
+    nodes:
+      - node_type: prompt_maker
+        strategy:
+          metrics:
+            - metric_name: bleu
+            - metric_name: meteor
+            - metric_name: rouge
+            - metric_name: sem_score
+              embedding_model: openai
+          generator_modules:
+            - module_type: openai_llm
+              llm: openai
+              model: gpt-4o-mini
+        modules:
+          - module_type: fstring
+            prompt:
+            - | 
+              당신의 역할은 경제 용어에 대해 친절하고 쉽게 이해할 수 있는 설명을 제공하는 것입니다.
+              당신은 경제 지식이 없거나 경제 개념을 쉽게 배우고 싶은 사람들을 대상으로 '오늘의 단어' 포스팅을 작성합니다.
+
+              먼저 단어의 정의를 상세하게 설명해 주고, 일상 생활에 적용할 수 있는 관련 예시를 하나 간단하게 들어주세요.
+
+              마지막으로 이 용어를 이해하는 것이 왜 중요한지 요약하고 글을 마무리해 주세요.
+              경제 지식이 전혀 없는 사람도 쉽게 이해하고 흥미롭게 읽을 수 있도록 친근하고 쉽게 작성해 주세요.
+
+              # 주의사항:
+              1. 문서의 내용을 기반으로만 글을 작성하세요. 내용을 지어내거나 사실과 다르게 작성하지 마세요.
+              2. 만약 설명할 수 없는 부분이 있다면, '모르겠습니다'라고 답하세요.
+              3. 모든 제목은 #나 ## 같은 Markdown 표시 없이 굵은 글씨(**)로 나타나야 합니다. 예를 들어'## 경기는'는 '**경기**는'로 표시합니다.
+              4. 본문에는 일반 텍스트 형식을 사용하고, 필요할 경우 단어에만 굵은 글씨를 사용해주세요.
+              5. 제목을 제외하여 주세요.
+
+              이제 주제에 맞게 블로그 글을 작성해 주세요.
+              질문: {query}
+              단락: {retrieved_contents}
+              답변:
+      - node_type: generator
+        strategy:
+          metrics: 
+            - metric_name: bleu
+            - metric_name: meteor
+            - metric_name: rouge
+            - metric_name: sem_score
+              embedding_model: openai
+            - metric_name: g_eval
+              metrics: [consistency, fluency, relevance, coherence]
+            - metric_name: bert_score
+              lang: ko
+        modules:
+          - module_type: openai_llm
+            llm: gpt-4o-mini
+            temperature: 0.3
+            batch: 2

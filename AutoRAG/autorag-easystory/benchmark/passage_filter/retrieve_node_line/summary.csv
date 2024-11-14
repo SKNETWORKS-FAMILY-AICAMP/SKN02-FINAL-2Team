@@ -1,0 +1,4 @@
+node_type,best_module_filename,best_module_name,best_module_params,best_execution_time
+retrieval,52.parquet,HybridRRF,"{'top_k': 5, 'weight': 4.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'openai_embed_3_large'}, {'top_k': 5, 'bm25_tokenizer': 'ko_okt'})}",0.0566847403844197
+passage_reranker,0.parquet,KoReranker,{'top_k': 5},6.348632963498433
+passage_filter,3.parquet,ThresholdCutoff,{'threshold': 0.85},0.000106406211853

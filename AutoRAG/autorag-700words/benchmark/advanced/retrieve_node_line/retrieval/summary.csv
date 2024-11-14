@@ -1,0 +1,21 @@
+filename,module_name,module_params,execution_time,retrieval_ndcg,retrieval_mrr,retrieval_map,retrieval_recall,is_best
+0.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}",0.027994661331176757,0.8778557852142874,0.87,0.87,0.9,False
+1.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'gte-multilingual-base'}",0.046467342376708985,0.8778557852142874,0.87,0.87,0.9,False
+2.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'KoSimCSE-roberta'}",0.03578670024871826,0.8778557852142874,0.87,0.87,0.9,False
+3.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'KU-HIAI-ONTHEIT-large-v2.1'}",0.04243532180786133,0.8778557852142874,0.87,0.87,0.9,False
+4.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'kf-deberta-multitask'}",0.037696638107299806,0.8778557852142874,0.87,0.87,0.9,False
+5.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'ko-sroberta-multitask'}",0.03991682052612305,0.8778557852142874,0.87,0.87,0.9,False
+6.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'KoE5'}",0.03481527805328369,0.8778557852142874,0.87,0.87,0.9,False
+7.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'openai_embed_3_large'}",0.03434884071350098,0.8778557852142874,0.87,0.87,0.9,False
+8.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'bge-m3'}",0.03208330154418945,0.8778557852142874,0.87,0.87,0.9,False
+9.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'KU-HIAI-ONTHEIT-large-v2'}",0.04941123962402344,0.8778557852142874,0.87,0.87,0.9,False
+10.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'multilingual-e5-large-instruct'}",0.03576777935028076,0.8778557852142874,0.87,0.87,0.9,False
+11.parquet,VectorDB,"{'top_k': 5, 'embedding_model': 'paraphrase-multilingual-mpnet-base-v2'}",0.03742287635803223,0.8778557852142874,0.87,0.87,0.9,False
+12.parquet,BM25,"{'top_k': 5, 'bm25_tokenizer': 'ko_okt'}",0.004469466209411621,0.784917674952686,0.7536666666666666,0.7536666666666666,0.88,False
+13.parquet,BM25,"{'top_k': 5, 'bm25_tokenizer': 'ko_kiwi'}",1.0449010229110718,0.7413044117875532,0.7140000000000001,0.7140000000000001,0.82,False
+14.parquet,BM25,"{'top_k': 5, 'bm25_tokenizer': 'ko_kkma'}",0.06529648303985595,0.7876549990937118,0.7496666666666667,0.7496666666666667,0.9,False
+15.parquet,HybridRRF,"{'top_k': 5, 'weight': 6.0, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}, {'top_k': 5, 'bm25_tokenizer': 'ko_kkma'})}",0.09329114437103271,0.9378557852142875,0.9233333333333335,0.9233333333333335,0.98,False
+16.parquet,HybridCC,"{'top_k': 5, 'normalize_method': 'dbsf', 'weight': 0.4, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}, {'top_k': 5, 'bm25_tokenizer': 'ko_kkma'})}",0.09329114437103271,0.921587777449017,0.9023333333333332,0.9023333333333332,0.98,False
+17.parquet,HybridCC,"{'top_k': 5, 'normalize_method': 'tmm', 'weight': 0.93, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}, {'top_k': 5, 'bm25_tokenizer': 'ko_kkma'})}",0.09329114437103271,0.9498456573943649,0.94,0.94,0.98,True
+18.parquet,HybridCC,"{'top_k': 5, 'normalize_method': 'z', 'weight': 0.4, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}, {'top_k': 5, 'bm25_tokenizer': 'ko_kkma'})}",0.09329114437103271,0.921587777449017,0.9023333333333332,0.9023333333333332,0.98,False
+19.parquet,HybridCC,"{'top_k': 5, 'normalize_method': 'mm', 'weight': 0.46, 'target_modules': ('VectorDB', 'BM25'), 'target_module_params': ({'top_k': 5, 'embedding_model': 'paraphrase-multilingual-MiniLM-L12-v2'}, {'top_k': 5, 'bm25_tokenizer': 'ko_kkma'})}",0.09329114437103271,0.9198456573943649,0.9,0.9,0.98,False
