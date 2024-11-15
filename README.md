@@ -117,8 +117,8 @@ SKN2기 최종 단위프로젝트
 </br></br>
 
 **[ 1분 뉴스 ]** </br></br>
-![image](https://github.com/user-attachments/assets/635b2261-ea3b-4b5c-9df4-f4bb336a28f7)
-</br></br>
+![image](https://github.com/user-attachments/assets/7efbe28b-b556-41d7-a076-07683854d396)
+
 
 
 📚 <strong>한줄 회고</strong>
