@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:  
+    build: .
+    command: gunicorn --workers=1 -k gevent final_proj_blog.wsgi:application --bind 0.0.0.0:8000
+    environment:
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
+    volumes:
+      - ./:/usr/src/app
+      - ./.env:/usr/src/app/.env         
+      - ./.env.dev:/usr/src/app/.env.dev 
+      - ./.env.prod:/usr/src/app/.env.prod 
+      - ./.env.prod.db:/usr/src/app/.env.prod.db 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=yooobwoood
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=final_proj_blog_dev
+
+volumes:
+  postgres_data:
